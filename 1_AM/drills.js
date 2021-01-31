@@ -1,7 +1,8 @@
-const assert = require("assert");
+//const assert = require("assert");
 //Day 1 Work
 // Feel free to look things up online!
 
+/*
 const reverse = function(str) {
     // TODO - write a function which reverses the string
     let splitString = str.split("");
@@ -45,13 +46,11 @@ announceDate();
 const shiftRight = function(str, num) {
     // TODO - write a function which shifts a string `num` characters to the right
     // Example = shiftThree("Hello") === "lloHe"}
-    let newArr = [];
+    let letters = str.split("")
     for (let i = 0; i < num; i++) {
-        newArr = arr.pop;
+        letters.unshift(letters.pop())
     }
-    console.log(newArr);
-
-
+    return letters.join("")
 }
 
 shiftRight("Hello", 3);
@@ -60,38 +59,41 @@ shiftRight("Hello", 3);
 
 const tokenize = function(str) {
     // TODO - write a function which converts a multi-word string into an array of words
-    let arr = [];
-    arr.push(str);
-    const arrLength = arr.length;
-    for (let i = 0; i < arrLength; i++) {
-        let holder = arr.find(" ");
-        arr.slice(holder);
-        console.log(arr);
-    }
+    return str.split(" ");
 }
 
 tokenize("Hello World");
 
+
+
 const uniqueOnes = function(arr) {
     // TODO - write a function which returns the inputted array without duplicate elements
-    const num = arr.length();
-    for (let i = 0; i < num + 1; i++) {
-        let eq = arr.sort();
-        if (eq = 0) {
-            arr.pop(i);
+    let out = [];
+    for (el of arr) {
+        if (! (el in out)) {
+            out.push(el);
         }
     }
-    console.log(arr);
+    return out;
 }
 
 uniqueOnes([1, 2, 3, 4, 1, 5, 6, 2, 7]);
+*/
+
 
 const zip = function(arr1, arr2) {
     // TODO - write a function which combines two arrays into an array of 2-element arrays and returns -1
     // if the two arrays are of unequal length
     // Example: zip([1, 2, 3], [5, 3, 1]) === [[1, 5], [2, 3], [3, 1]]
-    console.log(arr1.sort(arr2));
-    arr1.join(arr2);
+    if (arr1.length != arr2.length) {
+        return -1;
+    }
+    let array3 = [];
+    for (let i = 0; i < arr1; i++) {
+        array3.push([arr1[i], arr2[i]]);
+    }
+
+    return array3;
 }
 
 const unzip = function(arr) {
@@ -100,6 +102,8 @@ const unzip = function(arr) {
     let arr2 = [];
     arr.slice((arr.length / 2));
 }
+
+unzip([1, 2, 3, 4, 5]);
 
 // Write tests here:
 
